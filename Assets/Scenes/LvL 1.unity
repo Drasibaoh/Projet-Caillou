@@ -1824,7 +1824,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7529182, y: 1}
+    m_SensorSize: {x: 1.7990196, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1841,7 +1841,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423618658}
   m_LocalRotation: {x: 0.066633396, y: -0.70396024, z: 0.06663339, w: 0.7039603}
-  m_LocalPosition: {x: 12.831122, y: -2.5082767, z: -24.01024}
+  m_LocalPosition: {x: 12.831122, y: -1.6462772, z: -24.01024}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1044660264}
@@ -12528,7 +12528,7 @@ PrefabInstance:
     - target: {fileID: 4006006398519755729, guid: 387d1932386849a45bd4de5367531b91,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5082767
+      value: -1.6462772
       objectReference: {fileID: 0}
     - target: {fileID: 4006006398519755729, guid: 387d1932386849a45bd4de5367531b91,
         type: 3}
@@ -12590,6 +12590,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5060444177187149915, guid: 3a497a6c30b599a4ca5e04d185b7a163,
         type: 3}
+    - target: {fileID: 7085797480157413774, guid: 212a3e7a74ea6fb44a318f815f36e31d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.77
+      objectReference: {fileID: 0}
     - target: {fileID: 7085797480157413775, guid: 212a3e7a74ea6fb44a318f815f36e31d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -12654,6 +12659,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7085797480979876787, guid: 212a3e7a74ea6fb44a318f815f36e31d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.678
+      objectReference: {fileID: 0}
+    - target: {fileID: 7085797480979876789, guid: 212a3e7a74ea6fb44a318f815f36e31d,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7085797480979876789, guid: 212a3e7a74ea6fb44a318f815f36e31d,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 212a3e7a74ea6fb44a318f815f36e31d, type: 3}
