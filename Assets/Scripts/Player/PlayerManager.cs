@@ -11,6 +11,7 @@ public enum RockStates { Rock, Fire, Grass, Ice}
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager _instance;
     public PlayerStates playerState;
     public RockStates rockState;
     private AdvancedWalkerController myController;
@@ -20,11 +21,24 @@ public class PlayerManager : MonoBehaviour
     public KeyCode switchToGrass;
     public KeyCode switchToIce;
 
+    private AdvancedWalkerController myRock;
+    private AdvancedWalkerController myFire;
+    private AdvancedWalkerController myGrass;
+    private AdvancedWalkerController myIce;
+
     private Rigidbody myRb;
     private CapsuleCollider myCollider;
     public Vector3 centerCaps;
     private Respawn myRespawnPoint;
 
+    void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +46,7 @@ public class PlayerManager : MonoBehaviour
         myController = GetComponent<AdvancedWalkerController>();
         myCollider = GetComponent<CapsuleCollider>();
         myRespawnPoint = GetComponent<Respawn>();
+        
         
 
         myCollider.height = 1.5f;
@@ -82,13 +97,9 @@ public class PlayerManager : MonoBehaviour
             
         }
 
-        if (thisObject.tag == "Watter" && rockState == RockStates.Fire)
-        {
-            IsDead();
-        }
-
         if (thisObject.tag == "GPlat" && rockState == RockStates.Fire)
         {
+            other.gameObject.SetActive(false);
             // chopper le collider parent de thisObject
         }
 
@@ -99,11 +110,6 @@ public class PlayerManager : MonoBehaviour
             
         }
 
-    }
-
-    void IsDead()
-    {
-        myController.transform.position = myRespawnPoint.transform.position;
     }
 
     #region PLAYER STATES
@@ -133,6 +139,7 @@ public class PlayerManager : MonoBehaviour
     {
         rockState = RockStates.Rock;
         Debug.Log("(PlayerManager.cs) is Rock");
+
     }
 
     public void SetFire()

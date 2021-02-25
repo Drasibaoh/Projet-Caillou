@@ -80,7 +80,7 @@ namespace CMF
 		void Setup()
 		{
 			tr = transform;
-			col = GetComponent<Collider>();
+			col = this.GetComponent<Collider>();
 
 			//If no collider is attached to this gameobject, add a collider;
 			if(col == null)
