@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 610542791795647178}
   - component: {fileID: 610542791795647179}
   m_Layer: 0
-  m_Name: Caillou
+  m_Name: Player
   m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,9 +49,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &2198218589826016334
 MonoBehaviour:
   m_ObjectHideFlags: 0

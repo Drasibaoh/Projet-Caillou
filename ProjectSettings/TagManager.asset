@@ -9,6 +9,9 @@ TagManager:
   - ice
   - grass
   - CP
+  - GPlat
+  - Collectible
+  - Watter
   layers:
   - Default
   - TransparentFX

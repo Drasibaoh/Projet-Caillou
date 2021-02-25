@@ -12,13 +12,12 @@ public class Respawn : MonoBehaviour
         respawn.transform.position = this.transform.position;
     }
 
-    // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entrée trigger");
+        Debug.Log("(Respawn.cs) Entrée trigger");
         if (other.tag == "CP")
         {
-            Debug.Log("C'est un CP");
+            Debug.Log("(Respawn.cs) C'est un CP");
             respawn.transform.position = other.transform.position;
         }
     }
