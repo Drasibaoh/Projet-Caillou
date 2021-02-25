@@ -10,6 +10,8 @@ public class Respawn : MonoBehaviour
     void Start()
     {
         respawn.transform.position = this.transform.position;
+
+        Debug.Log("(Respawn.cs) Position respawn in start" + respawn.transform.position);
     }
 
     void OnTriggerEnter(Collider other)

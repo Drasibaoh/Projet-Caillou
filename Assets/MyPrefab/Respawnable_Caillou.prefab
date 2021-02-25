@@ -72,7 +72,7 @@ PrefabInstance:
     - target: {fileID: 610542791795647176, guid: 3af0c870d58dc4b47b87ea0679d69d68,
         type: 3}
       propertyPath: m_Name
-      value: Player_Caillou
+      value: Player_Caillou_Rock
       objectReference: {fileID: 0}
     - target: {fileID: 610542791795647176, guid: 3af0c870d58dc4b47b87ea0679d69d68,
         type: 3}
@@ -203,6 +203,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.y
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 610542791795647183, guid: 3af0c870d58dc4b47b87ea0679d69d68,
+        type: 3}
+      propertyPath: m_Height
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 610542792685021428, guid: 3af0c870d58dc4b47b87ea0679d69d68,
         type: 3}
