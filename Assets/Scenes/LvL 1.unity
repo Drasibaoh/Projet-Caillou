@@ -242,8 +242,7 @@ Transform:
   m_LocalRotation: {x: -0.32365564, y: -0, z: -0, w: 0.946175}
   m_LocalPosition: {x: 1.09, y: 6.91, z: 1.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 630122504}
+  m_Children: [{fileID: 630122504}]
   m_Father: {fileID: 608520451}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -19.529001, y: 0, z: 0}
@@ -1420,7 +1419,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7164179, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4167,8 +4166,7 @@ Transform:
   m_LocalRotation: {x: 0.24496122, y: -0, z: -0, w: 0.96953297}
   m_LocalPosition: {x: 1.0700002, y: 11.247042, z: -7.431868}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 239516436}
+  m_Children: [{fileID: 239516436}]
   m_Father: {fileID: 608520451}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 34.602, y: 0, z: 0}
@@ -4212,8 +4210,7 @@ Transform:
   m_LocalRotation: {x: 0.09788953, y: -0, z: -0, w: 0.9951973}
   m_LocalPosition: {x: 1.0700002, y: 18.10743, z: -14.678357}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1283129862}
+  m_Children: [{fileID: 1283129862}]
   m_Father: {fileID: 608520451}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 34.931, y: 0, z: 0}
@@ -5732,8 +5729,7 @@ Transform:
   m_LocalRotation: {x: 0.0019497024, y: -0, z: -0, w: 0.99999815}
   m_LocalPosition: {x: 1.0700002, y: 13.76901, z: 12.310033}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1837982086}
+  m_Children: [{fileID: 1837982086}]
   m_Father: {fileID: 608520451}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 1.2820001, y: 0, z: 0}
@@ -7298,7 +7294,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47520
+  m_Name: pb_Mesh32240
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8124,8 +8120,7 @@ Transform:
   m_LocalRotation: {x: 0.08159248, y: -0, z: -0, w: 0.9966658}
   m_LocalPosition: {x: 1.09, y: 4.415996, z: -6.8477364}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1869536121}
+  m_Children: [{fileID: 1869536121}]
   m_Father: {fileID: 608520451}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 25.509, y: 0, z: 0}

@@ -100,6 +100,9 @@ public class PlayerManager : MonoBehaviour
         if (thisObject.tag == "GPlat" && rockState == RockStates.Fire)
         {
             other.gameObject.SetActive(false);
+            Debug.Log("eee");
+            StartCoroutine(Wait(thisObject, 3f));
+            Debug.Log("eeeee");
             // chopper le collider parent de thisObject
         }
 
@@ -159,4 +162,11 @@ public class PlayerManager : MonoBehaviour
     }
 
     #endregion
+    public IEnumerator Wait(GameObject plateforme, float delay)
+    {        
+        yield return new WaitForSecondsRealtime(delay);
+        Debug.Log("eeee");
+        plateforme.SetActive(true);
+
+    }
 }
