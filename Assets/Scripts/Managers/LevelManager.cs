@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag!=null && other.tag == "Player")
+        if (other.tag!=null )
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }

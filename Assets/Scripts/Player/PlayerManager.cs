@@ -26,6 +26,11 @@ public class PlayerManager : MonoBehaviour
     private AdvancedWalkerController myGrass;
     private AdvancedWalkerController myIce;
 
+    public GameObject rockform;
+    public GameObject fireform;
+    public GameObject iceform;
+    public GameObject grassform;
+
     private Rigidbody myRb;
     private CapsuleCollider myCollider;
     public Vector3 centerCaps;
@@ -36,7 +41,6 @@ public class PlayerManager : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
     }
     // Start is called before the first frame update
@@ -59,18 +63,27 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKeyDown(switchToRock))
         {
             SetRock();
+            myCollider.enabled = false;
+            myCollider.enabled = true;
+
         }
         else if (Input.GetKeyDown(switchToFire))
         {
             SetFire();
+            myCollider.enabled = false;
+            myCollider.enabled = true;
         }
         else if (Input.GetKeyDown(switchToGrass))
         {
             SetGrass();
+            myCollider.enabled = false;
+            myCollider.enabled = true;
         }
         else if (Input.GetKeyDown(switchToIce))
         {
             SetIce();
+            myCollider.enabled = false;
+            myCollider.enabled = true;
         }
     }
 
@@ -85,6 +98,13 @@ public class PlayerManager : MonoBehaviour
             myController.jumpSpeed = 12.5f;
         }
 
+        if (thisObject.tag == "Watter" && rockState == RockStates.Rock)
+        {
+            myController.gravity -= 20f;
+            myController.movementSpeed -= 5f;
+            myController.jumpSpeed = 3f;
+            
+        }
         if (thisObject.tag == "Watter" && rockState == RockStates.Grass)
         {
             myController.gravity = 0f;
@@ -93,8 +113,11 @@ public class PlayerManager : MonoBehaviour
 
         if (thisObject.tag == "Watter" && rockState == RockStates.Ice)
         {
-            myController.gravity = -30f;
-            
+            BoxCollider surface = thisObject.GetComponent<BoxCollider>();
+            transform.position = new Vector3(transform.position.x, thisObject.transform.position.y+surface.center.y + thisObject.transform.localScale.y*0.8f+surface.size.y/2, transform.position.z);
+            myController.gravity = 0f;
+            myController.momentum = Vector3.zero;
+
         }
 
         if (thisObject.tag == "GPlat" && rockState == RockStates.Fire)
@@ -110,8 +133,32 @@ public class PlayerManager : MonoBehaviour
         {
             myController.jumpSpeed = 10f;
             myController.gravity = 30f;
-            
         }
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.tag == "Watter" )
+        {
+           
+            myController.movementSpeed = 10f;
+            myController.gravity = 30f;
+            myController.jumpSpeed = 10f;
+        }
+    }
+
+    void OnTriggerExit ()
+    {
+        myController.gravity = 30f;
+        myController.momentum = Vector3.zero;
+    }
+
+    public IEnumerator Wait(GameObject plateforme, float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        Debug.Log("eeee");
+        plateforme.SetActive(true);
 
     }
 
@@ -149,6 +196,7 @@ public class PlayerManager : MonoBehaviour
     {
         rockState = RockStates.Fire;
         Debug.Log("(PlayerManager.cs) is Fire");
+
     }
     public void SetGrass()
     {
@@ -162,11 +210,5 @@ public class PlayerManager : MonoBehaviour
     }
 
     #endregion
-    public IEnumerator Wait(GameObject plateforme, float delay)
-    {        
-        yield return new WaitForSecondsRealtime(delay);
-        Debug.Log("eeee");
-        plateforme.SetActive(true);
 
-    }
 }
