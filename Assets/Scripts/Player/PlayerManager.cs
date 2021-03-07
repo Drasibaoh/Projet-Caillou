@@ -109,6 +109,7 @@ public class PlayerManager : MonoBehaviour
         if (thisObject.tag == "Watter" && rockState == RockStates.Grass)
         {
             myController.gravity = 0f;
+            myController.jumpSpeed = 0f;
             myController.momentum = Vector3.zero;
         }
 
