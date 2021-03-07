@@ -35,6 +35,7 @@ public class PlayerManager : MonoBehaviour
     private CapsuleCollider myCollider;
     public Vector3 centerCaps;
     private Respawn myRespawnPoint;
+    public float heightmodifier;
 
     void Awake()
     {
@@ -114,7 +115,7 @@ public class PlayerManager : MonoBehaviour
         if (thisObject.tag == "Watter" && rockState == RockStates.Ice)
         {
             BoxCollider surface = thisObject.GetComponent<BoxCollider>();
-            transform.position = new Vector3(transform.position.x, thisObject.transform.position.y+surface.center.y + thisObject.transform.localScale.y*0.8f+surface.size.y/2, transform.position.z);
+            transform.position = new Vector3(transform.position.x, thisObject.transform.position.y+surface.center.y + thisObject.transform.localScale.y*heightmodifier+surface.size.y/2, transform.position.z);
             myController.gravity = 0f;
             myController.momentum = Vector3.zero;
 
