@@ -101,8 +101,8 @@ public class PlayerManager : MonoBehaviour
 
         if (thisObject.tag == "Watter" && rockState == RockStates.Rock)
         {
-            myController.gravity -= 20f;
-            myController.movementSpeed -= 5f;
+            myController.gravity = 10f;
+            myController.movementSpeed = 5f;
             myController.jumpSpeed = 3f;
             
         }
