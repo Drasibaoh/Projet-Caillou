@@ -39,6 +39,7 @@ public class TiTleScript : MonoBehaviour
 
     public void Exit() 
     {
+        Debug.Log("end");
         Application.Quit();
     }
     public void StartGame() 

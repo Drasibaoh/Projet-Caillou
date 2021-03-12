@@ -16,9 +16,13 @@ public class PlayerManager : MonoBehaviour
     private AdvancedWalkerController myController;
 
     public KeyCode switchToRock;
+    public KeyCode switchToRock2;
     public KeyCode switchToFire;
+    public KeyCode switchToFire2;
     public KeyCode switchToGrass;
+    public KeyCode switchToGrass2;
     public KeyCode switchToIce;
+    public KeyCode switchToIce2;
 
     private AdvancedWalkerController myRock;
     private AdvancedWalkerController myFire;
@@ -60,26 +64,26 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(switchToRock))
+        if (Input.GetKeyDown(switchToRock) || Input.GetKeyDown(switchToRock2))
         {
             SetRock();
             myCollider.enabled = false;
             myCollider.enabled = true;
 
         }
-        else if (Input.GetKeyDown(switchToFire))
+        else if (Input.GetKeyDown(switchToFire) || Input.GetKeyDown(switchToFire2))
         {
             SetFire();
             myCollider.enabled = false;
             myCollider.enabled = true;
         }
-        else if (Input.GetKeyDown(switchToGrass))
+        else if (Input.GetKeyDown(switchToGrass) || Input.GetKeyDown(switchToGrass2))
         {
             SetGrass();
             myCollider.enabled = false;
             myCollider.enabled = true;
         }
-        else if (Input.GetKeyDown(switchToIce))
+        else if (Input.GetKeyDown(switchToIce) || Input.GetKeyDown(switchToIce2))
         {
             SetIce();
             myCollider.enabled = false;
