@@ -34,19 +34,19 @@ public class PauseMenu : MonoBehaviour
         }
         collextibles.text = ": " + GameManager._instance.collectedCollectibles;
 
-        if (Input.GetKeyDown(KeyCode.Keypad1) && gameIsPaused == false)
+        if (PlayerManager._instance.rockState == RockStates.Rock && gameIsPaused == false)
         {
             stateTexte.text = "Rock";
         }
-        if (Input.GetKeyDown(KeyCode.Keypad2) && gameIsPaused == false)
+        if (PlayerManager._instance.rockState == RockStates.Fire && gameIsPaused == false)
         {
             stateTexte.text = "Fire";
         }
-        if (Input.GetKeyDown(KeyCode.Keypad3) && gameIsPaused == false)
+        if (PlayerManager._instance.rockState == RockStates.Grass && gameIsPaused == false)
         {
             stateTexte.text = "Grass";
         }
-        if (Input.GetKeyDown(KeyCode.Keypad4) && gameIsPaused == false)
+        if (PlayerManager._instance.rockState == RockStates.Ice && gameIsPaused == false)
         {
             stateTexte.text = "Ice";
         }
