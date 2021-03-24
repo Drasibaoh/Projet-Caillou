@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager _instance;
     public PlayerStates playerState;
     public RockStates rockState;
-    private AdvancedWalkerController myController;
+    public AdvancedWalkerController myController;
 
     public KeyCode switchToRock;
     public KeyCode switchToRock2;
