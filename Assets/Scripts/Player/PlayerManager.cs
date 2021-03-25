@@ -10,11 +10,12 @@ public enum RockStates { Rock, Fire, Grass, Ice}
 
 public class PlayerManager : MonoBehaviour
 {
+    [Header("player")]
     public static PlayerManager _instance;
     public PlayerStates playerState;
     public RockStates rockState;
     public AdvancedWalkerController myController;
-
+    [Header("keys")]
     public KeyCode switchToRock;
     public KeyCode switchToRock2;
     public KeyCode switchToFire;
@@ -28,12 +29,24 @@ public class PlayerManager : MonoBehaviour
     private AdvancedWalkerController myFire;
     private AdvancedWalkerController myGrass;
     private AdvancedWalkerController myIce;
-
-    public GameObject rockform;
-    public GameObject fireform;
-    public GameObject iceform;
-    public GameObject grassform;
-
+    [Header("FormVisualFeedBakc")]
+    public SkinnedMeshRenderer myRenderer;
+    public Material rockform;
+    public Material fireform;
+    public Material iceform;
+    public Material grassform;
+    public PauseMenu feedback;
+    [Header("FormParticlesFeedBakc")]
+    public GameObject rock;
+    public GameObject fire;
+    public GameObject grass;
+    public GameObject ice;
+    [Header("FormAudioFeedBakc")]
+    public AudioSource sound;
+    public List<AudioClip> footstep;
+    public List<AudioClip> formChange;
+    public float fsCoolDown=0f;
+    [Header("Collider")]
     private Rigidbody myRb;
     private CapsuleCollider myCollider;
     public Vector3 centerCaps;
@@ -54,7 +67,7 @@ public class PlayerManager : MonoBehaviour
         myController = GetComponent<AdvancedWalkerController>();
         myCollider = GetComponent<CapsuleCollider>();
         myRespawnPoint = GetComponent<Respawn>();
-        
+
         
 
         myCollider.height = 1.5f;
@@ -89,6 +102,13 @@ public class PlayerManager : MonoBehaviour
             myCollider.enabled = false;
             myCollider.enabled = true;
         }
+        if (myController.IsGrounded() && myController.momentum.z!=0)
+        {
+            int rand = Random.Range(0, footstep.Count + 1);
+            sound.clip = footstep[rand];
+            sound.Play();
+        }
+        Debug.Log(myController.momentum);
     }
 
     void OnTriggerEnter(Collider other)
@@ -193,6 +213,14 @@ public class PlayerManager : MonoBehaviour
     public void SetRock()
     {
         rockState = RockStates.Rock;
+        myRenderer.material = rockform;
+        feedback.ChangeToRock();
+        rock.SetActive(true);
+        fire.SetActive(false);
+        grass.SetActive(false);
+        ice.SetActive(false);
+        sound.clip = formChange[0];
+        sound.Play();
         Debug.Log("(PlayerManager.cs) is Rock");
 
     }
@@ -200,17 +228,41 @@ public class PlayerManager : MonoBehaviour
     public void SetFire()
     {
         rockState = RockStates.Fire;
+        myRenderer.material = fireform;
+        feedback.ChangeToFire();
+        rock.SetActive(false);
+        fire.SetActive(true);
+        grass.SetActive(false);
+        ice.SetActive(false);
+        sound.clip = formChange[1];
+        sound.Play();
         Debug.Log("(PlayerManager.cs) is Fire");
 
     }
     public void SetGrass()
     {
         rockState = RockStates.Grass;
+        myRenderer.material = grassform;
+        feedback.ChangeToGrass();
+        rock.SetActive(false);
+        fire.SetActive(false);
+        grass.SetActive(true);
+        ice.SetActive(false);
+        sound.clip = formChange[2];
+        sound.Play();
         Debug.Log("(PlayerManager.cs) is Grass");
     }
     public void SetIce()
     {
         rockState = RockStates.Ice;
+        myRenderer.material = iceform;
+        feedback.ChangeToIce();
+        rock.SetActive(false);
+        fire.SetActive(false);
+        grass.SetActive(false);
+        ice.SetActive(true);
+        sound.clip = formChange[3];
+        sound.Play();
         Debug.Log("(PlayerManager.cs) is Ice");
     }
 

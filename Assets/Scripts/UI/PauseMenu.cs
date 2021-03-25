@@ -13,6 +13,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject gameUI;
 
+    public Image feedbakcImage;
+    public List<Sprite> formFeedback;
     void Start()
     {
         stateTexte.text = "Rock";
@@ -80,5 +82,20 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("QuitGame");
         Application.Quit();
     }
-
+    public void ChangeToRock()
+    {
+        feedbakcImage.sprite = formFeedback[0];
+    }
+    public void ChangeToFire()
+    {
+        feedbakcImage.sprite = formFeedback[1];
+    }
+    public void ChangeToGrass()
+    {
+        feedbakcImage.sprite = formFeedback[2];
+    }
+    public void ChangeToIce()
+    {
+        feedbakcImage.sprite = formFeedback[3];
+    }
 }
