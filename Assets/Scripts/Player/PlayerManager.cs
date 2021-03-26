@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Dynamic;
 using CMF;
-
+using UnityEngine.VFX;
 public enum PlayerStates { Idle, Move, Jump, Swim }
 
 public enum RockStates { Rock, Fire, Grass, Ice}
@@ -38,6 +38,7 @@ public class PlayerManager : MonoBehaviour
     public PauseMenu feedback;
     [Header("FormParticlesFeedBakc")]
     public GameObject rock;
+    public VisualEffect rockpoof;
     public GameObject fire;
     public GameObject grass;
     public GameObject ice;
@@ -216,6 +217,7 @@ public class PlayerManager : MonoBehaviour
         myRenderer.material = rockform;
         feedback.ChangeToRock();
         rock.SetActive(true);
+        rockpoof.Play();
         fire.SetActive(false);
         grass.SetActive(false);
         ice.SetActive(false);
