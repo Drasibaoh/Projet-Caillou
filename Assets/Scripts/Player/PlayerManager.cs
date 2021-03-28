@@ -46,7 +46,6 @@ public class PlayerManager : MonoBehaviour
     public AudioSource sound;
     public List<AudioClip> footstep;
     public List<AudioClip> formChange;
-    public float fsCoolDown=0f;
     [Header("Collider")]
     private Rigidbody myRb;
     private CapsuleCollider myCollider;
