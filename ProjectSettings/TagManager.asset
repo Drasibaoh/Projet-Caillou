@@ -12,6 +12,7 @@ TagManager:
   - GPlat
   - Collectible
   - Watter
+  - PostProcess
   layers:
   - Default
   - TransparentFX
