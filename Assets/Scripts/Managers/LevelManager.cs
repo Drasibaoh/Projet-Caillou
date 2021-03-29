@@ -5,22 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float waitingTime = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag!=null )
+        if (other.tag != null)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            LoadNextLevel();
         }
+    }
+
+    public void LoadNextLevel()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        yield return new WaitForSeconds(waitingTime);
+
+        Debug.Log("temps écoulé");
+
+        SceneManager.LoadScene(levelIndex);
     }
 }
