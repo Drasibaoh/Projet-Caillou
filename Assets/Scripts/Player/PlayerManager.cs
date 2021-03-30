@@ -44,7 +44,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject ice;
     [Header("FormAudioFeedBakc")]
     public AudioSource sound;
-    public List<AudioClip> footstep;
+   // public List<AudioClip> footstep;
     public List<AudioClip> formChange;
     [Header("Collider")]
     private Rigidbody myRb;
@@ -53,9 +53,9 @@ public class PlayerManager : MonoBehaviour
     private Respawn myRespawnPoint;
     public float heightmodifier;
 
-    private float gape;
+   /* private float gape;
     private Vector3 formerPos;
-    private Vector3 newPos;
+    private Vector3 newPos;*/
     void Awake()
     {
         if (_instance == null)
@@ -105,7 +105,7 @@ public class PlayerManager : MonoBehaviour
             myCollider.enabled = false;
             myCollider.enabled = true;
         }
-        if (gape >= 0.8f)
+        /*if (gape >= 0.8f)
         {
             newPos = transform.position;
             if (myController.IsGrounded() && formerPos.z != newPos.z)
@@ -117,7 +117,7 @@ public class PlayerManager : MonoBehaviour
             formerPos = newPos;
             gape = 0f;
         }
-        gape += Time.deltaTime;
+        gape += Time.deltaTime;*/
     }
 
     void OnTriggerEnter(Collider other)
@@ -128,7 +128,7 @@ public class PlayerManager : MonoBehaviour
         {
             Debug.Log("(PlayerManager.cs) C'est une GPlat");
 
-            myController.jumpSpeed = 12.5f;
+            myController.jumpSpeed = 13f;
         }
 
         if (thisObject.tag == "Watter" && rockState == RockStates.Rock)

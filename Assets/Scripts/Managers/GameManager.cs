@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance;
-    public int collectedCollectibles;
-    public int MaxCollectibles;
+    public int collectedCollectibles=0;
+    public int MaxCollectibles=2;
     public enum GameStates { InGame, InPause,  }
     private void Awake()
     {

@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
-        collextibles.text = ": " + GameManager._instance.collectedCollectibles;
+        collextibles.text =""+GameManager._instance.collectedCollectibles;
 
         if (PlayerManager._instance.rockState == RockStates.Rock && gameIsPaused == false)
         {
