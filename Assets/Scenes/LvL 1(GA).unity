@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &10010130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9383,6 +9383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab39402e0cf5b964a9b03acd06305efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  feedback: {fileID: 0}
+  sound: {fileID: 0}
 --- !u!1 &1065925916
 GameObject:
   m_ObjectHideFlags: 0
@@ -11657,7 +11659,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.3258426, y: 1}
+    m_SensorSize: {x: 1.7816743, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -20780,6 +20782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab39402e0cf5b964a9b03acd06305efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  feedback: {fileID: 0}
+  sound: {fileID: 0}
 --- !u!136 &2120043245
 CapsuleCollider:
   m_ObjectHideFlags: 0
