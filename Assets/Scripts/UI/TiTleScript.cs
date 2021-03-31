@@ -12,6 +12,7 @@ public class TiTleScript : MonoBehaviour
     public GameObject NormalMenu;
     public GameObject OptionMenu;
     public GameObject ControlesMenu;
+    public GameObject tutoUI;
     public TMP_Dropdown resolutionDropDown;
     
 
@@ -54,9 +55,14 @@ public class TiTleScript : MonoBehaviour
     }
     public void OpenControls()
     {
-        ControlesMenu.SetActive(true);
-        NormalMenu.SetActive(false);
-        OptionMenu.SetActive(false);
+        if (ControlesMenu.activeSelf)
+        {
+            ControlesMenu.SetActive(false);
+        }
+        else
+        {
+            ControlesMenu.SetActive(true);
+        }
     }
     public void OpenNormal()
     {
@@ -68,6 +74,7 @@ public class TiTleScript : MonoBehaviour
     {
         audioMixer.SetFloat("volume", volume);
     }
+
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
@@ -80,5 +87,16 @@ public class TiTleScript : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+    public void Tuto()
+    {
+        if (tutoUI.activeSelf)
+        {
+            tutoUI.SetActive(false);
+        }
+        else
+        {
+            tutoUI.SetActive(true);
+        }
     }
 }

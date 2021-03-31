@@ -12,6 +12,8 @@ public class PauseMenu : MonoBehaviour
     public Text stateTexte;
     public GameObject pauseMenuUI;
     public GameObject gameUI;
+    public GameObject controlsUI;
+    public GameObject tutoUI;
 
     public Image feedbakcImage;
     public List<Sprite> formFeedback;
@@ -54,6 +56,28 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void Controls()
+    {
+        if (controlsUI.activeSelf)
+        {
+            controlsUI.SetActive(false);
+        }
+        else
+        {
+            controlsUI.SetActive(true);
+        }
+    }
+    public void Tuto()
+    {
+        if (tutoUI.activeSelf)
+        {
+            tutoUI.SetActive(false);
+        }
+        else
+        {
+            tutoUI.SetActive(true);
+        }
+    }
     public void Resume ()
     {
         gameUI.SetActive(true);
