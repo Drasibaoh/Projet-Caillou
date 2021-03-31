@@ -16923,7 +16923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2259a39670695ba45aa3a0443fc9fab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitingTime: 2
+  waitingTime: 1.25
 --- !u!4 &983652670 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d6bbec01616f5c42a7085d0b3652cc9,
