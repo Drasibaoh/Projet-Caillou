@@ -130,6 +130,12 @@ public class PlayerManager : MonoBehaviour
 
             myController.jumpSpeed = 13f;
         }
+        if (thisObject.tag == "GPlat" && rockState == RockStates.Rock)
+        {
+            Debug.Log("(PlayerManager.cs) C'est une GPlat");
+
+            myController.jumpSpeed = 10f;
+        }
 
         if (thisObject.tag == "Watter" && rockState == RockStates.Rock)
         {

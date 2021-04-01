@@ -5,10 +5,12 @@ using UnityEngine;
 public class HoleScript : MonoBehaviour
 {
     public GameObject respawn;
+    public AudioClip death;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,6 +22,9 @@ public class HoleScript : MonoBehaviour
     {
         if (other.tag!=null && other.CompareTag("Player"))
         {
+            AudioSource sound = other.GetComponent<AudioSource>();
+            sound.clip = death;
+            sound.Play();
             other.transform.position = respawn.transform.position;
         }
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Water : MonoBehaviour
 {
+    public AudioClip death;
     public GameObject respawn;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,9 @@ public class Water : MonoBehaviour
     {
         if (other.tag != null && other.CompareTag("Player") && PlayerManager._instance.rockState==RockStates.Fire)
         {
+            AudioSource player = other.GetComponent<AudioSource>();
+            player.clip = death;
+            player.Play();
             other.transform.position = respawn.transform.position;
         }
     }
